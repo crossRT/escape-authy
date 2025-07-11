@@ -21,11 +21,17 @@ I created this project to help others like me who want a simple, reliable way to
 > ⚠️ Make sure you've already retrieved the `decrypted_tokens.json` file by following [this guide](https://github.com/AlexTech01/Authy-iOS-MiTM).
 
 
-1. Download the binary from the [releases](#) page.
+1. Download the binary from the [releases](https://github.com/crossRT/escape-authy/releases) page and extract locally.
+
+   If you prefer commands:
+   ```bash
+   VERSION=v0.0.1
+   curl -L https://github.com/crossRT/escape-authy/releases/download/$VERSION/escape-authy_Darwin_arm64.tar.gz | tar -xz
+   ```
 
 2. Run the command below (replace with your actual path):
    ```bash
-   escape-authy --decrypted-tokens-file-path ~/Downloads/decrypted_tokens.json toRaivo
+   ./escape-authy --decrypted-tokens-file-path ~/Downloads/decrypted_tokens.json toRaivo
    ```
 
 3. A converted file will be exported to the same directory.
