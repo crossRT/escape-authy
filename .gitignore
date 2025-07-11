@@ -3,3 +3,5 @@ raivo.json
 aegis.json
 ente.txt
 
+# Added by goreleaser init:
+dist/
