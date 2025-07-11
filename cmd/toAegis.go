@@ -5,7 +5,6 @@ package cmd
 
 import (
 	"encoding/json"
-	"fmt"
 	"os"
 	"strings"
 
@@ -59,17 +58,9 @@ var toAegisCmd = &cobra.Command{
 			aegisEntries = append(aegisEntries, aegisEntry)
 		}
 
-		prettyJSON, err := json.MarshalIndent(aegisEntries, "", "  ")
+		err = helper.ExportFile(aegisEntries, "aegis.json")
 		if err != nil {
-			fmt.Println("Error marshalling:", err)
-			os.Exit(1)
-		}
-
-		err = os.WriteFile("aegis.json", prettyJSON, 0644)
-		if err != nil {
-			fmt.Println("Error writing file:", err)
-		} else {
-			fmt.Println("JSON written to aegis.json")
+			panic(err)
 		}
 	},
 }

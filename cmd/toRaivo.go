@@ -5,7 +5,6 @@ package cmd
 
 import (
 	"encoding/json"
-	"fmt"
 	"os"
 	"strconv"
 	"strings"
@@ -57,17 +56,9 @@ var toRaivoCmd = &cobra.Command{
 			raivoEntries = append(raivoEntries, raivoEntry)
 		}
 
-		prettyJSON, err := json.MarshalIndent(raivoEntries, "", "  ")
+		err = helper.ExportFile(raivoEntries, "raivo.json")
 		if err != nil {
-			fmt.Println("Error marshalling:", err)
-			os.Exit(1)
-		}
-
-		err = os.WriteFile("raivo.json", prettyJSON, 0644)
-		if err != nil {
-			fmt.Println("Error writing file:", err)
-		} else {
-			fmt.Println("JSON written to raivo.json")
+			panic(err)
 		}
 	},
 }
