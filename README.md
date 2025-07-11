@@ -4,17 +4,23 @@ A CLI tool to convert `decrypted_tokens.json` into formats compatible with other
 
 ## Intention
 
-While researching how to migrate from Authy to other MFA apps, I found many helpful resources—but the amount of information was overwhelming and the format differences were confusing.
+I found many helpful resources while researching how to migrate from Authy to other MFA apps.
 
-I created this project to help others like me who want a simple, reliable way to convert `decrypted_tokens.json` into a usable format.
+Especially to [this guide](https://github.com/AlexTech01/Authy-iOS-MiTM) created by @AlexTech01.
+
+I managed to retrieve the `decrypted_tokens.json`, but the format differences on different MFA applications were confusing for me.
+
+And some of the scripts in the thread are outdated, and some requires the Authy Desktop app which is not installed on my machine.
+
+So I created this project to help others like me who want a simple, reliable way to convert `decrypted_tokens.json` into a usable format without the need of Authy Desktop app.
 
 ## Supported Formats
 
-- [Raivo](https://raivo-otp.com/) - `escape-auth toRaivo`
+- [Raivo](https://raivo-otp.com/) - `escape-authy toRaivo`
 
-- [Aegis](https://getaegis.app/) - `escape-auth toAegis`
+- [Aegis](https://getaegis.app/) - `escape-authy toAegis`
 
-- [Ente](https://ente.io/auth/) - `escape-auth toEnte`
+- [Ente](https://ente.io/auth/) - `escape-authy toEnte`
 
 ## How to use
 
